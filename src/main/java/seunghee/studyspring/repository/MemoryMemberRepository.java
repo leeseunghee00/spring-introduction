@@ -5,7 +5,7 @@ import seunghee.studyspring.domain.Member;
 
 import java.util.*;
 
-public class MemoryMemberRepository implements MemberRepository{
+public class MemoryMemberRepository implements MemberRepository {
 
     private static Map<Long, Member> store = new HashMap<>(); // 값을 저장하기 위함
     private static long sequence = 0L;
@@ -27,7 +27,7 @@ public class MemoryMemberRepository implements MemberRepository{
     }
 
     @Override
-    public Optional<Member> findByname(String name) {
+    public Optional<Member> findByName(String name) {
         return store.values().stream()
                 .filter(member -> member.getName().equals(name))
                 .findAny();
